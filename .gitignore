@@ -1,0 +1,39 @@
+# Java / Maven / Gradle
+target/
+build/
+.gradle/
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Node / TanStack Start
+node_modules/
+dist/
+.output/
+.nitro/
+.tanstack/
+*.local
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Local scratch / extraction artifacts (peuvent contenir des paquets — ne pas committer)
+.scratch/
+*.dataclone-package.json
