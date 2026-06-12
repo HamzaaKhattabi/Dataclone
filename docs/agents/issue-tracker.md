@@ -1,30 +1,31 @@
-# Issue tracker: GitHub
+# Issue tracker: GitLab
 
-Issues and PRDs for this repo live as GitHub issues. Use the `gh` CLI for all operations.
+Issues and PRDs for this repo live as GitLab issues. Use the `glab` CLI for all operations.
 
 ## Conventions
 
-- **Create an issue**: `gh issue create --title "..." --body "..."`. Use a heredoc for multi-line bodies.
-- **Read an issue**: `gh issue view <number> --comments`, filtering comments by `jq` and also fetching labels.
-- **List issues**: `gh issue list --state open --json number,title,body,labels,comments --jq '[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments[].body]}]'` with appropriate `--label` and `--state` filters.
-- **Comment on an issue**: `gh issue comment <number> --body "..."`
-- **Apply / remove labels**: `gh issue edit <number> --add-label "..."` / `--remove-label "..."`
-- **Close**: `gh issue close <number> --comment "..."`
+- **Create an issue**: `glab issue create --title "..." --description "..."`. Use a file (`--description-file`) for multi-line bodies.
+- **Read an issue**: `glab issue view <number> --comments`.
+- **List issues**: `glab issue list --opened --output json` (filter further with `jq`); add `--label "..."` to scope.
+- **Comment on an issue**: `glab issue note <number> --message "..."`
+- **Apply / remove labels**: `glab issue update <number> --label "..."` / `--unlabel "..."`
+- **Close**: `glab issue close <number>` (commenter au préalable avec `glab issue note`).
 
-Infer the repo from `git remote -v` — `gh` does this automatically when run inside a clone.
+Infer the project from `git remote -v` — `glab` does this automatically when run inside a clone.
 
-## `gh` PATH caveat (Windows)
+## `glab` PATH caveat (Windows)
 
-`gh` est installé dans `C:\Program Files\GitHub CLI\gh.exe`. Selon le shell, ce dossier
-n'est **pas toujours dans le `PATH`** (notamment les shells non interactifs). Si `gh ...`
-échoue avec « command not found / introuvable », appelle le binaire par son chemin complet :
-`& "C:\Program Files\GitHub CLI\gh.exe" ...` (PowerShell) ou
-`"/c/Program Files/GitHub CLI/gh.exe" ...` (bash).
+`glab` est installé dans `C:\Users\<user>\AppData\Local\Programs\glab\glab.exe`. Selon le shell,
+ce dossier n'est **pas toujours dans le `PATH`** (notamment les shells non interactifs lancés
+avant l'install). Si `glab ...` échoue avec « command not found / introuvable », appelle le binaire
+par son chemin complet ou préfixe `$env:Path` :
+`$env:Path = "C:\Users\<user>\AppData\Local\Programs\glab;$env:Path"` (PowerShell).
 
 ## When a skill says "publish to the issue tracker"
 
-Create a GitHub issue.
+Create a GitLab issue.
 
 ## When a skill says "fetch the relevant ticket"
 
-Run `gh issue view <number> --comments`.
+Run `glab issue view <number> --comments`.
+

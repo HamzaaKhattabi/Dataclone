@@ -14,5 +14,6 @@ When a skill mentions a role (e.g. "apply the AFK-ready triage label"), use the 
 
 Edit the right-hand column to match whatever vocabulary you actually use.
 
-> Note : le dépôt GitHub étant neuf, ces labels n'existent pas encore côté GitHub. Ils seront
-> créés à la volée par `gh issue edit --add-label` (ou crée-les d'avance avec `gh label create`).
+> Note : le projet GitLab étant neuf, ces labels n'existent pas encore côté GitLab. Ils seront
+> créés à la volée via `glab label create` (ou en passant `--label` lors de la création d'une issue,
+> selon les permissions du projet).

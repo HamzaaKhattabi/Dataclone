@@ -10,7 +10,7 @@ Vocabulaire du projet : voir `CONTEXT.md`. Décisions structurantes : voir `docs
 
 ### Issue tracker
 
-Les issues vivent dans **GitHub Issues** (CLI `gh`). See `docs/agents/issue-tracker.md`.
+Les issues vivent dans **GitLab Issues** (CLI `glab`). See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
