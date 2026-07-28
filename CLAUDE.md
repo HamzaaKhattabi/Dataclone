@@ -21,7 +21,6 @@ Vocabulaire de labels **par défaut** (`needs-triage`, `needs-info`, `ready-for-
 
 Dépôt **mono-contexte** (`CONTEXT.md` + `docs/adr/` à la racine). See `docs/agents/domain.md`.
 
-
 <!-- gitbook-agent-instructions:start -->
 
 ## GitBook Documentation Editing
